@@ -8,11 +8,10 @@ public class Leetcode1295 {
     static int evenNoDigits(int[] arr){
         int evendigits=0;
         for(int  num:arr){
-            boolean isEven=digits(num);
+            boolean isEven=digits(num); //for finding no.of.digits use (int)(Math.log10(num))+1 it returns no.of.digits in num
             if(isEven){
                 evendigits+=1;
             }
-
         }
         return evendigits;
     }
