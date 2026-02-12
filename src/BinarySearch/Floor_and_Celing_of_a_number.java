@@ -2,7 +2,7 @@ package BinarySearch;
 
 import java.util.Arrays;
 
-public class Floor_and_Celing_of_number {
+public class Floor_and_Celing_of_a_number{
     public static void main(String[] args) {
         int[] arr = {2, 3, 5, 9, 14, 16, 18};
         int target = 15;
@@ -12,16 +12,14 @@ public class Floor_and_Celing_of_number {
     static int[] findNumber(int[] arr, int target) {
         int start = 0;
         int end = arr.length - 1;
-        if (target > arr[end]) {
-            return new int[]{arr[end], -1};
-        }
-        if (target < arr[start]) {
-            return new int[]{-1, arr[start]};
+        if (target > arr[arr.length - 1]) {
+            return new int[]{arr[end],-1};
         }
         while (start <= end) {
             int mid = start + (end - start) / 2;
+
             if (arr[mid] == target) {
-                return new int[]{arr[mid], arr[mid]};
+                return new int[] {arr[mid],arr[mid]};
             }
             else if (arr[mid] < target) {
                 start = mid + 1;
@@ -30,6 +28,6 @@ public class Floor_and_Celing_of_number {
                 end = mid - 1;
             }
         }
-        return new int[]{arr[end], arr[start]};
+        return new int[] {arr[end],arr[start]};
     }
 }
